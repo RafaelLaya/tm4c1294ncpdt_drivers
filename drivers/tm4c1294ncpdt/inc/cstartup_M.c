@@ -6,7 +6,8 @@
  * Copyright 2007-2017 IAR Systems AB.
  *
  * $Revision: 112610 $
- *
+ * 
+ * User added the rest of the handlers (those with IRQ number higher than SysTick_Handler)
  **************************************************/
 
 #pragma language=extended
