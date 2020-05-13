@@ -50,3 +50,14 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Others
+*.ewp
+
+# hidden files/folders
+.*
+!/.gitignore
+*.sim
+*.dep
+*.ewd
+*.ewt
