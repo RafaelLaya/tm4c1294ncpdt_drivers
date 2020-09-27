@@ -1,9 +1,3 @@
-/*
- * Rafael Laya
- * 1975274
- * April 25th, 2020
- * Drivers for the analog to digital converter of the tm4c1294ncpdt board
- */
 
 #include "tm4c1294ncpdt_adc.h"
 
@@ -239,7 +233,7 @@ void ADC_ConfigClockDivisor(ADC_RegDef_t *pADC, uint8_t Divisor) {
     pADC->CC = (pADC->CC & ~(ADC_CC_CLKDIV_MASK)) | (Divisor << ADC_CC_CLKDIV_POS);
 }
 
-void ADC_ConfligClockSource(ADC_RegDef_t *pADC, uint8_t ClockSource) {
+void ADC_ConfigClockSource(ADC_RegDef_t *pADC, uint8_t ClockSource) {
     #if ASSERT_ENABLED
     assert(IS_ADC(pADC));
     assert(ADC_IS_CLOCKSOURCE(ClockSource));

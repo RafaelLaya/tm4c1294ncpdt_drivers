@@ -1,12 +1,4 @@
-/*
- * Rafael Laya
- * 1975274
- * April 25th, 2020
- * Contains definitions for tm4c1294ncpdt_adc.h
- */
-
-#ifndef __TM4C1294NCPDT_ADC_H__
-#define __TM4C1294NCPDT_ADC_H__
+#pragma once
 
 #include "tm4c1294ncpdt.h"
 
@@ -590,7 +582,4 @@ void ADC_ConfigClockDivisor(ADC_RegDef_t *pADC, uint8_t Divisor);
   * @param  ClockSource: Value from @ADC_ClockSource
   * @retval none
   */
-void ADC_ConfligClockSource(ADC_RegDef_t *pADC, uint8_t ClockSource);
-
-
-#endif // __TM4C1294NCPDT_ADC_H__
+void ADC_ConfigClockSource(ADC_RegDef_t *pADC, uint8_t ClockSource);

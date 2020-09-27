@@ -1,15 +1,5 @@
-/*
- * Rafael Laya
- * 1975274
- * April 17th, 2020
- * Contains necessary definitions for tm4c1294ncpdt_nvic.c to use
- * TM4C1294NCPDT
- */
 
-
-#ifndef __TM4C1294NCPDT_NVIC_H__
-#define __TM4C1294NCPDT_NVIC_H__
-
+#pragma once
 #include "tm4c1294ncpdt.h"
 
 // Priority-limits Macros
@@ -102,6 +92,3 @@ void NVIC_ClearPendingIRQ(IRQNumber_type IRQNumber);
   * @retval None
   */
 void NVIC_SetPriority(IRQNumber_type IRQNumber, uint8_t Priority);
-
-
-#endif // __TM4C1294NCPDT_NVIC_H__

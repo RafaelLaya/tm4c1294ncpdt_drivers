@@ -1,13 +1,4 @@
-/*
- * Rafael Laya
- * 1975274
- * April 25th, 2020
- * Contains definitions for tm4c1294ncpdt_tim.h
- * @note: The terms Port A and Port B will be used to refer to Timer A and Timer B (respectively) in this driver 
- */
-
-#ifndef __TM4C1294NCPDT_TIM_H__
-#define __TM4C1294NCPDT_TIM_H__
+#pragma once
 
 #include "tm4c1294ncpdt.h"
 
@@ -725,4 +716,3 @@ uint16_t TIM_ReadRawITStatusAll(TIM_RegDef_t *pTIM);
   */
  uint8_t TIM_ReadCounterStatus(TIM_RegDef_t *pTIM, uint8_t Port);
 
-#endif // __TM4C1294NCPDT_TIM_H__

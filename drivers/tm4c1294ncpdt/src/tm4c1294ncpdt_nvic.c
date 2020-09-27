@@ -1,9 +1,3 @@
-/*
- * Rafael Laya
- * 1975274
- * April 16th, 2020
- * NVIC Drivers for tm4c1294ncpdt
- */
 
 #include "tm4c1294ncpdt_nvic.h"
 

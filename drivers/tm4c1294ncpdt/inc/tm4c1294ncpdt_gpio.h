@@ -1,13 +1,4 @@
-/*
- * Rafael Laya
- * 1975274
- * April 16th, 2020
- * Contains necessary definitions for tm4c1294ncpdt_gpio.c to use
- * TM4C1294NCPDT
- */
-
-#ifndef __TM4C1294NCPDT_GPIO_H__
-#define __TM4C1294NCPDT_GPIO_H__
+#pragma once
 
 #include "tm4c1294ncpdt.h"
 
@@ -358,4 +349,3 @@ void GPIO_PinUnlockAndCommit(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
   */
 void GPIO_Lock(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
 
- #endif // __TM4C1294NCPDT_GPIO_H__

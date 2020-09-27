@@ -1,12 +1,4 @@
-/*
- * Rafael Laya
- * 1975274
- * April 25th, 2020
- * Contains definitions for tm4c1294ncpdt_uart.h
- */
-
-#ifndef __TM4C1294NCPDT_UART_H__
-#define __TM4C1294NCPDT_UART_H__
+#pragma once
 
 #include "tm4c1294ncpdt.h"
 
@@ -701,4 +693,3 @@ IRQNumber_type UART_GetIRQNumber(UART_RegDef_t *pUART);
   */
  __weak void UART_RxMSGCallback(UART_Handle_t *pHandle, uint8_t Event);
 
-#endif // __TM4C1294NCPDT_UART_H__

@@ -1,17 +1,9 @@
-/*
- * Rafael Laya
- * 1975274
- * April 12th, 2020
- * Contains device-specific definitions for registers based on the
- * TM4C1294NCPDT
- */
-
-#ifndef __TM4C1294NCPDT_H__
-#define __TM4C1294NCPDT_H__
+#pragma once
 
 /*************************** Dependencies ************************************/
 #include <stdint.h>
 #include "tm4c1294ncpdt_config.h"
+#include "tm4c1294ncpdt_pins.h"
 
 #if (ASSERT_ENABLED)
 #include <assert.h>
@@ -69,6 +61,8 @@
 #define UART_UART5_BASE                     0x40011000UL
 #define UART_UART6_BASE                     0x40012000UL
 #define UART_UART7_BASE                     0x40013000UL
+
+#define SYSCTL_SYSCTL_BASE                  0x400FE000UL
 
 /**************************** END Base Addresses ****************************/
 
@@ -470,6 +464,247 @@ typedef struct {
 
 /****************************** END OF UART ***********************************/
 
+/****************************** SYSCTL ****************************************/
+/**
+  * @brief Register map for SYSCTL peripheral (SYSCTL)
+  */
+
+typedef struct {
+  __RW uint32_t  DID0;
+  __RW uint32_t  DID1;
+  __R  uint32_t  __res0[12];
+  __RW uint32_t  PTBOCTL;
+  __R  uint32_t  __res1[5];
+  __RW uint32_t  RIS;
+  __RW uint32_t  IMC;
+  __RW uint32_t  MISC;
+  __RW uint32_t  RESC;
+  __RW uint32_t  PWRTC;
+  __RW uint32_t  NMIC;
+  __R  uint32_t  __res2[5];
+  __RW uint32_t  MOSCCTL;
+  __R  uint32_t  __res3[12];
+  __RW uint32_t  RSCLKCFG;
+  __R  uint32_t  __res4[3];
+  __RW uint32_t  MEMTIM0;
+  __R  uint32_t  __res5;
+  __RW uint32_t  DSMEMTIM0;
+  __R  uint32_t  __res6[27];
+  __RW uint32_t  ALTCLKCFG;
+  __R  uint32_t  __res7[2];
+  __RW uint32_t  DSCLKCFG;
+  __RW uint32_t  DIVSCLK;
+  __RW uint32_t  SYSPROP;
+  __RW uint32_t  PIOSCCAL;
+  __RW uint32_t  PIOSCSTAT;
+  __R  uint32_t  __res8[2];
+  __RW uint32_t  PLLFREQ0;
+  __RW uint32_t  PLLFREQ1;
+  __RW uint32_t  PLLSTAT;
+  __R  uint32_t  __res9[13];
+  __RW uint32_t  NVMSTAT;
+  __R  uint32_t  __res10[13];
+  __RW uint32_t  RESBEHAVCTL;
+  __R  uint32_t  __res11[6];
+  __RW uint32_t  HSSR;
+  __R  uint32_t  __res12[34];
+  __RW uint32_t  USBPDS;
+  __RW uint32_t  USBMPC;
+  __RW uint32_t  EMACPDS;
+  __RW uint32_t  EMACMPC;
+  __R  uint32_t  __res13[28];
+  __RW uint32_t  PPWD;
+  __R  uint32_t  __res14;
+  __RW uint32_t  PPGPIO;
+  __RW uint32_t  PPDMA;
+  __RW uint32_t  PPEPI;
+  __RW uint32_t  PPHIB;
+  __RW uint32_t  PPUART;
+  __RW uint32_t  PPSSI;
+  __RW uint32_t  PPI2C;
+  __R  uint32_t  __res15;
+  __RW uint32_t  PPUSB;
+  __R  uint32_t  __res16;
+  __RW uint32_t  PPEPHY;
+  __RW uint32_t  PPCAN;
+  __RW uint32_t  PPADC;
+  __RW uint32_t  PPACMP;
+  __RW uint32_t  PPPWM;
+  __RW uint32_t  PPQEI;
+  __RW uint32_t  PPLPC;
+  __R  uint32_t  __res17;
+  __RW uint32_t  PPPECI;
+  __RW uint32_t  PPFAN;
+  __RW uint32_t  PPEEPROM;
+  __RW uint32_t  PPWTIMER;
+  __R  uint32_t  __res18[4];
+  __RW uint32_t  PPRTS;
+  __RW uint32_t  PPCCM;
+  __R  uint32_t  __res19[6];
+  __RW uint32_t  PPLCD;
+  __R  uint32_t  __res20;
+  __RW uint32_t  PPOWIRE;
+  __RW uint32_t  PPEMAC;
+  __RW uint32_t  PPPRB;
+  __RW uint32_t  PPHIM;
+  __R  uint32_t  __res21[86];
+  __RW uint32_t  SRWD;
+  __RW uint32_t  SRTIMER;
+  __RW uint32_t  SRGPIO;
+  __RW uint32_t  SRDMA;
+  __RW uint32_t  SREPI;
+  __RW uint32_t  SRHIB;
+  __RW uint32_t  SRUART;
+  __RW uint32_t  SRSSI;
+  __RW uint32_t  SRI2C;
+  __R  uint32_t  __res22;
+  __RW uint32_t  SRUSB;
+  __R  uint32_t  __res23;
+  __RW uint32_t  SREPHY;
+  __RW uint32_t  SRCAN;
+  __RW uint32_t  SRADC;
+  __RW uint32_t  SRACMP;
+  __RW uint32_t  SRPWM;
+  __RW uint32_t  SRQEI;
+  __R  uint32_t  __res24[4];
+  __RW uint32_t  SREEPROM;
+  __R  uint32_t  __res25[6];
+  __RW uint32_t  SRCCM;
+  __R  uint32_t  __res26[9];
+  __RW uint32_t  SREMAC;
+  __R  uint32_t  __res27[24];
+  __RW uint32_t  RCGCWD;
+  __RW uint32_t  RCGCTIMER;
+  __RW uint32_t  RCGCGPIO;
+  __RW uint32_t  RCGCDMA;
+  __RW uint32_t  RCGCEPI;
+  __RW uint32_t  RCGCHIB;
+  __RW uint32_t  RCGCUART;
+  __RW uint32_t  RCGCSSI;
+  __RW uint32_t  RCGCI2C;
+  __R  uint32_t  __res28;
+  __RW uint32_t  RCGCUSB;
+  __R  uint32_t  __res29;
+  __RW uint32_t  RCGCEPHY;
+  __RW uint32_t  RCGCCAN;
+  __RW uint32_t  RCGCADC;
+  __RW uint32_t  RCGCACMP;
+  __RW uint32_t  RCGCPWM;
+  __RW uint32_t  RCGCQEI;
+  __R  uint32_t  __res30[4];
+  __RW uint32_t  RCGCEEPROM;
+  __R  uint32_t  __res31[6];
+  __RW uint32_t  RCGCCCM;
+  __R  uint32_t  __res32[9];
+  __RW uint32_t  RCGCEMAC;
+  __R  uint32_t  __res33[24];
+  __RW uint32_t  SCGCWD;
+  __RW uint32_t  SCGCTIMER;
+  __RW uint32_t  SCGCGPIO;
+  __R  uint32_t  __res34;
+  __RW uint32_t  SCGCEPI;
+  __RW uint32_t  SCGCHIB;
+  __RW uint32_t  SCGCUART;
+  __RW uint32_t  SCGCSSI;
+  __RW uint32_t  SCGCI2C;
+  __R  uint32_t  __res35;
+  __RW uint32_t  SCGCUSB;
+  __R  uint32_t  __res36;
+  __RW uint32_t  SCGCEPHY;
+  __RW uint32_t  SCGCCAN;
+  __RW uint32_t  SCGCADC;
+  __RW uint32_t  SCGCACMP;
+  __RW uint32_t  SCGCPWM;
+  __RW uint32_t  SCGCQEI;
+  __R  uint32_t  __res37[4];
+  __RW uint32_t  SCGCEEPROM;
+  __R  uint32_t  __res38[6];
+  __RW uint32_t  SCGCCCM;
+  __R  uint32_t  __res39[9];
+  __RW uint32_t  SCGCEMAC;
+  __R  uint32_t  __res40[24];
+  __RW uint32_t  DCGCWD;
+  __RW uint32_t  DCGCTIMER;
+  __RW uint32_t  DCGCGPIO;
+  __R  uint32_t  __res41;
+  __RW uint32_t  DCGCEPI;
+  __RW uint32_t  DCGCHIB;
+  __RW uint32_t  DCGCUART;
+  __RW uint32_t  DCGCSSI;
+  __RW uint32_t  DCGCI2C;
+  __R  uint32_t  __res42;
+  __RW uint32_t  DCGCUSB;
+  __R  uint32_t  __res43;
+  __RW uint32_t  DCGCEPHY;
+  __RW uint32_t  DCGCCAN;
+  __RW uint32_t  DCGCADC;
+  __RW uint32_t  DCGCACMP;
+  __RW uint32_t  DCGCPWM;
+  __RW uint32_t  DCGCQEI;
+  __R  uint32_t  __res44[4];
+  __RW uint32_t  DCGCEEPROM;
+  __R  uint32_t  __res45[6];
+  __RW uint32_t  DCGCCCM;
+  __R  uint32_t  __res46[9];
+  __RW uint32_t  DCGCEMAC;
+  __R  uint32_t  __res47[24];
+  __RW uint32_t  PCWD;
+  __RW uint32_t  PCTIMER;
+  __RW uint32_t  PCGPIO;
+  __RW uint32_t  PCDMA;
+  __RW uint32_t  PCEPI;
+  __RW uint32_t  PCHIB;
+  __RW uint32_t  PCUART;
+  __RW uint32_t  PCSSI;
+  __RW uint32_t  PCI2C;
+  __R  uint32_t  __res48;
+  __RW uint32_t  PCUSB;
+  __R  uint32_t  __res49;
+  __RW uint32_t  PCEPHY;
+  __RW uint32_t  PCCAN;
+  __RW uint32_t  PCADC;
+  __RW uint32_t  PCACMP;
+  __RW uint32_t  PCPWM;
+  __RW uint32_t  PCQEI;
+  __R  uint32_t  __res50[4];
+  __RW uint32_t  PCEEPROM;
+  __R  uint32_t  __res51[6];
+  __RW uint32_t  PCCCM;
+  __R  uint32_t  __res52[9];
+  __RW uint32_t  PCEMAC;
+  __R  uint32_t  __res53[24];
+  __RW uint32_t  PRWD;
+  __RW uint32_t  PRTIMER;
+  __RW uint32_t  PRGPIO;
+  __RW uint32_t  PRDMA;
+  __RW uint32_t  PREPI;
+  __RW uint32_t  PRHIB;
+  __RW uint32_t  PRUART;
+  __RW uint32_t  PRSSI;
+  __RW uint32_t  PRI2C;
+  __R  uint32_t  __res54;
+  __RW uint32_t  PRUSB;
+  __R  uint32_t  __res55;
+  __RW uint32_t  PREPHY;
+  __RW uint32_t  PRCAN;
+  __RW uint32_t  PRADC;
+  __RW uint32_t  PRACMP; 
+  __RW uint32_t  PRPWM; 
+  __RW uint32_t  PRQEI; 
+  __R  uint32_t  __res56[4];
+  __RW uint32_t  PREEPROM;
+  __R  uint32_t  __res57[6];
+  __RW uint32_t  PRCCM;
+  __R  uint32_t  __res58[9];
+  __RW uint32_t  PREMAC;
+} SYSCTL_RegDef_t;
+
+#define SYSCTL                  ((SYSCTL_RegDef_t *) SYSCTL_SYSCTL_BASE)
+
+
+/******************************** END OF SYSCTL********************************/
+
+
 /******************************** MISCELLANEOUS *******************************/
 #define ENABLE          1U
 #define DISABLE         0U
@@ -486,6 +721,6 @@ typedef struct {
 #include "tm4c1294ncpdt_tim.h"
 #include "tm4c1294ncpdt_adc.h"
 #include "tm4c1294ncpdt_uart.h"
-#endif
+#endif /* INCLUDE_ALL_AUTOMATICALLY */
 
-#endif
+

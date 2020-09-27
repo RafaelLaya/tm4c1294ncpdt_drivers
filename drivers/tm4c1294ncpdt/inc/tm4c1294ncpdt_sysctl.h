@@ -1,13 +1,4 @@
-/*
- * Rafael Laya
- * 1975274
- * April 16th, 2020
- * Contains necessary definitions for tm4c1294ncpdt_sysctl.c to use
- * TM4C1294NCPDT
- */
-
- #ifndef __TM4C1294NCPDT_SYSCTL_H__
- #define __TM4C1294NCPDT_SYSCTL_H__
+#pragma once
 
 #include "tm4c1294ncpdt.h"
 
@@ -195,6 +186,7 @@
 #define SYSCTL_SRUART_UART7_MASK                  0x80U
 
 
+
 // Macro for accessing the SRGPIO register
 #define SYSCTL_SRGPIO_CMD(MASK, CMD)  do {                                     \
                                             if((CMD) == (SET)) {               \
@@ -284,7 +276,3 @@
 
 // Macro for reading PRUART register
 #define SYSCTL_PRUART_READ(POS)                ((SYSCTL_PRUART >> (POS)) & 0x1U)
-
-
-#endif // __TM4C1294NCPDT_SYSCTL_H__
-

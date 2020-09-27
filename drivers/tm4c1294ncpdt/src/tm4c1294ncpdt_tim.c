@@ -1,9 +1,3 @@
-/*
- * Rafael Laya
- * 1975274
- * April 25th, 2020
- * Drivers for the general purpose timers of the tm4c1294ncpdt board
- */
 
 #include "tm4c1294ncpdt_tim.h"
 
